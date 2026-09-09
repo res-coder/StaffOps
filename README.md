@@ -33,23 +33,6 @@ StaffOps is a professional staff operations, moderation, investigation, and serv
 - Privileged actions are permission checked server-side and important actions are audit logged.
 - The default IP hash salt in `config.yml` is intentionally a placeholder and should be replaced before production use.
 
-## Build
-Requirements:
-- JDK 21
-- Maven 3.9+
-
-```bash
-mvn clean package
-```
-
-Expected output:
-
-```text
-target/StaffOps-1.1.1.jar
-```
-
-Do not use Minecraft `/reload`. Stop the Paper server, replace the JAR, and start the server normally. Existing `staffops.db` data can remain in place; StaffOps performs in-place schema migrations.
-
 ## Main commands
 - `/so` - StaffOps dashboard and administrative tools
 - `/staff` - toggle Staff Mode
@@ -63,15 +46,3 @@ Do not use Minecraft `/reload`. Stop the Paper server, replace the JAR, and star
 - `/evidence` - investigation evidence tools
 - `/operations` - Server Operations Center
 - `/staffchat` - staff communication
-
-## Design notes
-StaffOps keeps server-side permission enforcement separate from GUI visibility. Persistent moderation data uses SQLite through HikariCP. Optional integrations do not prevent the plugin from loading when absent. Activity and evidence systems are designed around useful moderation context rather than video recording.
-
-## Production validation
-Before using on a live server:
-1. Build with Java 21 and test on Paper 1.21.8.
-2. Replace `settings.privacy.ip-hash-salt` with a long random secret.
-3. Verify each staff rank only has the permissions it should have.
-4. Test Staff Mode, vanish, freeze, inventory inspection, punishments, reports, cases, and evidence with both staff and normal player accounts.
-5. Restart the server and confirm persistence/migrations.
-6. Test optional Vault/LuckPerms integrations if installed.
