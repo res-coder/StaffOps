@@ -1,0 +1,78 @@
+settings:
+  server-name: "survival-1"
+
+  staff-mode:
+    auto-vanish: true
+    flight: true
+    invulnerable: true
+    lock-inventory: true
+
+  reports:
+    cooldown-seconds: 60
+    max-open-per-reporter: 3
+    max-reason-length: 160
+    duplicate-window-minutes: 10
+
+  notes:
+    max-length: 300
+
+  punishments:
+    broadcast: true
+    protect-staff: true
+
+  activity:
+    max-entries-per-player: 100
+    # Arguments to these commands are never retained by StaffOps.
+    redacted-commands:
+      - login
+      - register
+      - changepassword
+      - password
+      - pin
+      - 2fa
+
+  privacy:
+    store-ip-hash: true
+    # Raw IPs are OFF by default. staffops.profile.ip is also required to view IP history.
+    store-raw-ip: false
+    ip-hash-salt: "CHANGE-ME-TO-A-LONG-RANDOM-SECRET"
+
+  evidence:
+    activity-snapshot-size: 50
+
+  operations:
+    maintenance-on-start: false
+
+  database:
+    pool-size: 4
+
+punishment-ladders:
+  spam:
+    display: "Spam / Chat Flooding"
+    icon: PAPER
+    steps:
+      - {type: WARN, duration: "0", reason: "Spam / chat flooding"}
+      - {type: MUTE, duration: "15m", reason: "Repeated spam / chat flooding"}
+      - {type: MUTE, duration: "2h", reason: "Continued spam / chat flooding"}
+      - {type: MUTE, duration: "1d", reason: "Severe repeated spam"}
+  disrespect:
+    display: "Harassment / Disrespect"
+    icon: WRITABLE_BOOK
+    steps:
+      - {type: WARN, duration: "0", reason: "Harassment / disrespect"}
+      - {type: MUTE, duration: "30m", reason: "Repeated harassment / disrespect"}
+      - {type: MUTE, duration: "6h", reason: "Continued harassment"}
+      - {type: BAN, duration: "1d", reason: "Severe harassment"}
+  cheating:
+    display: "Cheating"
+    icon: DIAMOND_SWORD
+    steps:
+      - {type: BAN, duration: "7d", reason: "Cheating"}
+      - {type: BAN, duration: "30d", reason: "Repeated cheating"}
+      - {type: BAN, duration: "permanent", reason: "Repeated cheating"}
+  exploiting:
+    display: "Exploiting / Duplication"
+    icon: REDSTONE
+    steps:
+      - {type: BAN, duration: "14d", reason: "Exploiting / duplication"}
+      - {type: BAN, duration: "permanent", reason: "Repeated exploiting / duplication"}

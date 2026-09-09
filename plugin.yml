@@ -1,0 +1,106 @@
+name: StaffOps
+version: '1.1.1'
+main: com.staffops.StaffOpsPlugin
+api-version: '1.21'
+authors: [StaffOps Development]
+description: Advanced player management, investigations, moderation and server operations suite.
+softdepend: [Vault, LuckPerms]
+commands:
+  staffops: {description: Open StaffOps or use administrative subcommands, aliases: [so], permission: staffops.use}
+  staffmode: {description: Toggle advanced staff mode, aliases: [sm, staff], permission: staffops.staffmode}
+  vanish: {description: Toggle staff vanish, aliases: [v], permission: staffops.vanish}
+  freeze: {description: Freeze or unfreeze a player, permission: staffops.freeze}
+  inspect: {description: Open a complete player profile, permission: staffops.inspect}
+  punish: {description: Open punishment management for a player, permission: staffops.punish}
+  report: {description: Report a player to staff}
+  reports: {description: Open the staff report and investigation center, permission: staffops.reports}
+  cases: {description: Open case management, permission: staffops.cases}
+  case: {description: View or create moderation cases, permission: staffops.cases}
+  evidence: {description: View/capture investigation evidence, permission: staffops.evidence}
+  operations: {description: Open the server operations center, permission: staffops.operations}
+  staffchat: {description: Send a staff chat message, aliases: [sc], permission: staffops.staffchat}
+permissions:
+  staffops.use: {default: op}
+  staffops.staffmode: {default: op}
+  staffops.vanish: {default: op}
+  staffops.vanish.see: {default: op}
+  staffops.freeze: {default: op}
+  staffops.inspect: {default: op}
+  staffops.inspect.inventory: {default: op}
+  staffops.inspect.enderchest: {default: op}
+  staffops.profile.identity: {default: op}
+  staffops.profile.ip: {default: op}
+  staffops.profile.activity: {default: op}
+  staffops.profile.economy: {default: op}
+  staffops.profile.permissions: {default: op}
+  staffops.teleport: {default: op}
+  staffops.spectate: {default: op}
+  staffops.follow: {default: op}
+  staffops.punish: {default: op}
+  staffops.punish.warn: {default: op}
+  staffops.punish.mute: {default: op}
+  staffops.punish.kick: {default: op}
+  staffops.punish.ban: {default: op}
+  staffops.reports: {default: op}
+  staffops.reports.claim: {default: op}
+  staffops.reports.watch: {default: op}
+  staffops.reports.dismiss: {default: op}
+  staffops.reports.escalate: {default: op}
+  staffops.notes: {default: op}
+  staffops.cases: {default: op}
+  staffops.cases.create: {default: op}
+  staffops.cases.close: {default: op}
+  staffops.evidence: {default: op}
+  staffops.operations: {default: op}
+  staffops.operations.maintenance: {default: op}
+  staffops.operations.maintenance.bypass: {default: op}
+  staffops.operations.whitelist: {default: op}
+  staffops.operations.announce: {default: op}
+  staffops.operations.restart: {default: op}
+  staffops.staffchat: {default: op}
+  staffops.protected: {default: op}
+  staffops.override.protected: {default: false}
+  staffops.audit: {default: op}
+  staffops.admin:
+    default: op
+    children:
+      staffops.use: true
+      staffops.staffmode: true
+      staffops.vanish: true
+      staffops.vanish.see: true
+      staffops.freeze: true
+      staffops.inspect: true
+      staffops.inspect.inventory: true
+      staffops.inspect.enderchest: true
+      staffops.profile.identity: true
+      staffops.profile.ip: true
+      staffops.profile.activity: true
+      staffops.profile.economy: true
+      staffops.profile.permissions: true
+      staffops.teleport: true
+      staffops.spectate: true
+      staffops.follow: true
+      staffops.punish: true
+      staffops.punish.warn: true
+      staffops.punish.mute: true
+      staffops.punish.kick: true
+      staffops.punish.ban: true
+      staffops.reports: true
+      staffops.reports.claim: true
+      staffops.reports.watch: true
+      staffops.reports.dismiss: true
+      staffops.reports.escalate: true
+      staffops.notes: true
+      staffops.cases: true
+      staffops.cases.create: true
+      staffops.cases.close: true
+      staffops.evidence: true
+      staffops.operations: true
+      staffops.operations.maintenance: true
+      staffops.operations.maintenance.bypass: true
+      staffops.operations.whitelist: true
+      staffops.operations.announce: true
+      staffops.operations.restart: true
+      staffops.staffchat: true
+      staffops.audit: true
+      staffops.override.protected: true

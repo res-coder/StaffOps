@@ -1,0 +1,114 @@
+# StaffOps message configuration
+# MiniMessage formatting is supported. StaffOps forcibly disables italics everywhere it renders text.
+
+staff-prefix: "<dark_gray>[<gradient:#27E6E6:#FF4FB8><bold>StaffOps</bold></gradient><dark_gray>] <reset>"
+player-prefix: "<dark_gray>[<gray>Server</gray><dark_gray>] <reset>"
+
+no-permission: "<red>You do not have permission to do that."
+player-only: "<red>This action can only be used in-game."
+player-not-found: "<red>That player could not be found."
+protected-player: "<red>That player is protected from this moderation action."
+config-reloaded: "<green>Configuration and messages reloaded."
+
+usage:
+  main-player: "<red>Usage: /staffops player <name>"
+  note: "<red>Usage: /staffops note <player> <note>"
+  history: "<red>Usage: /staffops history <player>"
+  inspect: "<red>Usage: /inspect <player>"
+  freeze: "<red>Usage: /freeze <player>"
+  punish: "<red>Usage: /punish <player>"
+  report: "<red>Usage: /report <player> [cheating|chat_abuse|scamming|griefing|inappropriate|other] <reason>"
+  staffchat: "<red>Usage: /staffchat <message>"
+  evidence: "<red>Usage: /evidence <player>"
+  case: "<red>Usage: /case <id> or /case create <player> <reason>"
+  case-create: "<red>Usage: /case create <player> <reason>"
+  announce: "<red>Usage: /so announce <message>"
+  main-help: "<gray>Commands: <white>/so</white>, <white>/inspect <player></white>, <white>/cases</white>, <white>/reports</white>, <white>/operations</white>"
+
+notes:
+  too-long: "<red>Notes are limited to {limit} characters."
+  added: "<green>Staff note added to <white>{player}</white>."
+
+reports:
+  reason-too-long: "<red>Report reasons are limited to {limit} characters."
+  created: "<green>Your {category} report against <white>{player}</white> was submitted."
+  cooldown: "<red>Please wait before submitting another report."
+  open-limit: "<red>You already have the maximum number of open reports."
+  failed: "<red>Your report could not be submitted. Please try again."
+  reason-prompt: "<yellow>Report category: <white>{category}</white>. Type the reason in chat for <white>{player}</white>, or type <white>cancel</white>."
+  draft-cancelled: "<gray>Report cancelled."
+  draft-submitted: "<green>Your report was submitted."
+  staff-alert: "<yellow>New {category} report:</yellow> <white>{reporter}</white> reported <white>{target}</white> <gray>for</gray> <white>{reason}</white> <dark_gray>[{priority}]"
+
+staffmode:
+  enabled: "<aqua>Staff mode enabled."
+  disabled: "<gray>Staff mode disabled and your previous state was restored."
+
+vanish:
+  enabled: "<aqua>Vanish enabled. You are hidden from regular players."
+  disabled: "<gray>Vanish disabled. You are visible to everyone."
+
+freeze:
+  target-frozen: "<red><bold>You have been frozen.</bold> <gray>Do not disconnect. Follow staff instructions."
+  target-unfrozen: "<green>You have been unfrozen."
+  staff-state: "<aqua>{player}</aqua> <gray>is now {state}."
+  command-blocked: "<red>You cannot use that command while frozen."
+  disconnected-alert: "<red>Frozen player <white>{player}</white> disconnected."
+
+investigation:
+  follow-enabled: "<aqua>Follow Mode enabled for <white>{player}</white>."
+  follow-disabled: "<gray>Follow Mode disabled for <white>{player}</white>."
+  random-teleport: "<aqua>Teleported to <white>{player}</white>."
+  no-targets: "<yellow>No eligible players are currently online."
+
+cases:
+  created: "<green>Opened Case <white>#{id}</white> for <white>{player}</white>."
+  not-found: "<red>That case could not be found."
+
+evidence:
+  captured: "<green>Captured evidence <white>#{id}</white> for <white>{player}</white>."
+
+operations:
+  maintenance-enabled: "<yellow>Maintenance mode enabled. Non-bypass players can no longer join."
+  maintenance-disabled: "<green>Maintenance mode disabled."
+  maintenance-kick: "<red>The server is currently in maintenance mode. Please try again later."
+  announcement: "<gold><bold>Announcement:</bold> <white>{message}"
+  restart-warning: "<red><bold>Server restart:</bold> <white>The server will restart in 3 seconds."
+
+punishments:
+  applied: "<green>Applied <white>{type}</white> to <white>{player}</white>."
+  failed: "<red>Could not apply punishment: <white>{error}</white>"
+  invalid-ladder: "<red>Invalid punishment ladder configuration."
+  warning: "<red><bold>Warning:</bold> <white>{reason}</white>"
+  mute-applied: "<red>You have been muted. <gray>Reason: <white>{reason}</white>"
+  muted-chat: "<red>You are muted{remaining}. <gray>Reason: <white>{reason}</white>"
+  kick-screen: "<red><bold>You were removed from the server.</bold>\n<gray>Reason: <white>{reason}</white>"
+  ban-screen: "<red><bold>You are banned from this server.</bold>\n<gray>Reason: <white>{reason}</white>\n<gray>Expires: <white>{expires}</white>"
+
+staffchat: "<dark_gray>[<aqua>SC</aqua>] <white>{staff}</white><gray>: <white>{message}</white>"
+
+staff-tools:
+  navigator:
+    name: "<aqua><bold>Random Player</bold>"
+    lore: "<gray>Right-click to teleport to a random player"
+  inspector:
+    name: "<aqua><bold>Player Inspector</bold>"
+    lore: "<gray>Right-click a player to open their profile"
+  reports:
+    name: "<yellow><bold>Reports</bold>"
+    lore: "<gray>Right-click to open the report center"
+  inventory:
+    name: "<gold><bold>Inventory Inspector</bold>"
+    lore: "<gray>Right-click a player to inspect inventory"
+  freeze:
+    name: "<red><bold>Freeze Tool</bold>"
+    lore: "<gray>Right-click a player to freeze or unfreeze them"
+  vanish:
+    name: "<aqua><bold>Vanish</bold>"
+    lore: "<gray>Right-click to toggle visibility"
+  activity:
+    name: "<light_purple><bold>Recent Activity</bold>"
+    lore: "<gray>Right-click to choose a player to inspect"
+  dashboard:
+    name: "<yellow><bold>Staff Dashboard</bold>"
+    lore: "<gray>Right-click to open StaffOps"
